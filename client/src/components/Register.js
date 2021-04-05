@@ -20,6 +20,7 @@ function Register(){
 
         axios.post('/api/user/registeruser',user).then(res=>{
             console.log(res);
+            alert(res.data)
         }).catch(err=>{
             console.log(err); 
         })

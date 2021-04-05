@@ -1,4 +1,5 @@
-import React ,{useState} from 'react'
+import React ,{useState} from 'react';
+import axios from 'axios'
  
 function Login(){
 
@@ -15,7 +16,12 @@ function Login(){
             password:password
         }
 
-        console.log(user)
+        axios.post('/api/user/loginuser',user).then(res=>{
+            console.log(res)
+            alert(res.data)
+        }).catch(err=>{
+            console.log(err)
+        })
 
     }
     return (<div>
