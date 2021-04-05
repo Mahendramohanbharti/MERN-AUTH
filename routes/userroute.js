@@ -30,4 +30,31 @@ router.post('/registeruser',function(req,res){
 
 })
 
+router.post('/loginuser',function(req,res){
+    userModel.find({
+        username:req.body.username,
+        password:req.body.password
+    },function(err,documents){
+        if(err){
+            res.send('something went wrong')
+        }else{
+            if(documents.length==0){
+                res.send('Login failed')
+            }else{
+                res.send('Login Successful')
+            }
+        }
+    })
+})
+
+router.post('/getusers',function(req,res){
+    userModel.find({},function(err,documents){
+        if(err){
+            res.send('something went wrong')
+        }else{
+            res.send(documents)
+        }
+    })
+})
+
 module.exports=router
