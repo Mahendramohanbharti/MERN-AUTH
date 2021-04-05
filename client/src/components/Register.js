@@ -18,7 +18,11 @@ function Register(){
             password:password
         }
 
-        console.log(user)
+        axios.post('/api/user/registeruser',user).then(res=>{
+            console.log(res);
+        }).catch(err=>{
+            console.log(err); 
+        })
 
     }
     return (<div>

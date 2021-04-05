@@ -1,10 +1,10 @@
 const express = require('express')
 
-const app=express()
+var app=express()
 
-const bodyParser=require('body-parser')
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyParser.json());
+const bodyparser=require('body-parser')
+app.use(bodyparser.urlencoded({extended:true}));
+app.use(bodyparser.json());
 
 const userroute=require('./routes/userroute')
 
